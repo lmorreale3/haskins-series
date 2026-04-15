@@ -1,35 +1,43 @@
 :root {
-    --powder-green: #e9f5db; /* Light, academic green */
-    --haskins-green: #718355; /* Muted olive-slate for links/accents */
-    --dark-slate: #2c3e50;
-    --text-gray: #4a4a4a;
+    /* Refined Powder Green Palette */
+    --powder-green-light: #f1f8e9;  /* Very light background green */
+    --powder-green-main: #dcedc8;   /* The "Powder Green" for sidebar/accents */
+    --haskins-sage: #689f38;        /* Darker sage for text and buttons */
+    --dark-slate: #2c3e50;          /* Deep slate for readability */
+    --text-gray: #4f5b66;
     --white: #ffffff;
     --transition: all 0.3s ease;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #fdfdfd;
+    background-color: #fafdfb; /* Slight green-tinted white */
     color: var(--dark-slate);
     display: flex;
     line-height: 1.6;
 }
 
+/* Sidebar Navigation - Now the primary Powder Green element */
 .sidebar {
     width: 280px;
     height: 100vh;
-    background-color: var(--powder-green);
+    background-color: var(--powder-green-main);
     padding: 40px 30px;
     position: fixed;
     display: flex;
     flex-direction: column;
+    border-right: 1px solid #c5e1a5;
 }
 
 .logo h2 {
     font-family: 'Playfair Display', serif;
-    color: var(--haskins-green);
+    color: #33691e; /* Deep forest green for the brand */
     font-size: 1.6rem;
     line-height: 1.2;
 }
@@ -40,21 +48,31 @@ body {
     letter-spacing: 1px;
     margin: 10px 0 50px 0;
     font-weight: 600;
+    color: #558b2f;
 }
 
 .sidebar ul { list-style: none; flex-grow: 1; }
 .sidebar ul li { margin-bottom: 20px; }
 .sidebar ul li a {
     text-decoration: none;
-    color: var(--text-gray);
+    color: #33691e;
     font-weight: 500;
     transition: var(--transition);
 }
 
-.sidebar ul li a:hover { color: var(--haskins-green); }
+.sidebar ul li a:hover { 
+    padding-left: 5px;
+    color: var(--white);
+}
 
-.sidebar-footer { font-size: 0.75rem; color: #718355; opacity: 0.8; }
+.sidebar-footer { 
+    font-size: 0.75rem; 
+    color: #558b2f; 
+    border-top: 1px solid #c5e1a5;
+    padding-top: 20px;
+}
 
+/* Main Content Area */
 .content {
     margin-left: 280px;
     padding: 80px;
@@ -63,13 +81,13 @@ body {
 
 .mafe-badge {
     display: inline-block;
-    background: var(--haskins-green);
+    background: var(--haskins-sage);
     color: white;
     padding: 4px 12px;
     font-size: 0.7rem;
     font-weight: 800;
     text-transform: uppercase;
-    border-radius: 20px;
+    border-radius: 4px;
     margin-bottom: 15px;
 }
 
@@ -81,23 +99,26 @@ header h1 {
 
 .subtitle {
     font-size: 1.2rem;
-    color: var(--haskins-green);
+    color: var(--haskins-sage);
     margin-bottom: 20px;
 }
 
 .divider {
     width: 50px;
-    height: 3px;
-    background-color: var(--haskins-green);
+    height: 4px;
+    background-color: var(--powder-green-main);
     margin-bottom: 30px;
 }
 
-a { color: var(--haskins-green); text-decoration: none; border-bottom: 1px solid transparent; transition: var(--transition); }
-a:hover { border-bottom-color: var(--haskins-green); }
+/* Links */
+a { 
+    color: var(--haskins-sage); 
+    text-decoration: none; 
+    font-weight: 600;
+}
+a:hover { text-decoration: underline; }
 
-.section-title { font-family: 'Playfair Display', serif; margin-bottom: 10px; }
-.section-desc { margin-bottom: 40px; color: var(--text-gray); }
-
+/* Grid and Cards */
 .resource-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -109,19 +130,19 @@ a:hover { border-bottom-color: var(--haskins-green); }
     background: #fff;
     padding: 30px;
     border-radius: 8px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #e8f5e9;
     transition: var(--transition);
 }
 
 .card:hover {
-    border-color: var(--haskins-green);
-    box-shadow: 0 5px 15px rgba(113, 131, 85, 0.1);
+    border-color: var(--haskins-sage);
+    box-shadow: 0 5px 15px rgba(104, 159, 56, 0.1);
 }
 
 .card-tag {
     font-size: 0.65rem;
     font-weight: 700;
-    color: var(--haskins-green);
+    color: var(--haskins-sage);
     text-transform: uppercase;
     margin-bottom: 10px;
 }
@@ -129,23 +150,31 @@ a:hover { border-bottom-color: var(--haskins-green); }
 .card h3 { font-family: 'Playfair Display', serif; margin-bottom: 10px; font-size: 1.3rem; }
 .card p { font-size: 0.9rem; color: var(--text-gray); }
 
+/* Call to Action Section */
 .cta-section {
-    background-color: var(--powder-green);
+    background-color: var(--powder-green-light);
     padding: 50px;
     border-radius: 8px;
     text-align: center;
+    border: 1px solid var(--powder-green-main);
 }
 
 .btn-alt {
     display: inline-block;
     margin-top: 20px;
     padding: 12px 30px;
-    background-color: var(--haskins-green);
+    background-color: var(--haskins-sage);
     color: white;
     border-radius: 4px;
     font-weight: 600;
+    text-decoration: none;
 }
 
+.btn-alt:hover {
+    background-color: #33691e;
+}
+
+/* Responsive */
 @media (max-width: 900px) {
     .sidebar { width: 100%; height: auto; position: relative; }
     .content { margin-left: 0; width: 100%; padding: 40px; }
