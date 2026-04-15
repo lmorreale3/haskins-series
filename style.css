@@ -23,7 +23,7 @@ body {
     line-height: 1.6;
 }
 
-/* Sidebar Navigation - Now the primary Powder Green element */
+/* Sidebar Navigation - Primary Powder Green element */
 .sidebar {
     width: 280px;
     height: 100vh;
@@ -95,6 +95,22 @@ header h1 {
     font-family: 'Playfair Display', serif;
     font-size: 3rem;
     color: var(--dark-slate);
+    margin-bottom: 30px; /* Space above the image */
+}
+
+/* New Image Styling */
+.header-image-container {
+    width: 100%;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.header-image {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .subtitle {
